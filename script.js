@@ -13,7 +13,7 @@ window.onload = function(){
 
     init();
     
-    // fonction initiale qui crée le canvas et les instances snakee et applee
+    // initial function that creates the canvas and instances snakee and applee
     
     function init(){
         var canvas = document.createElement('canvas');
@@ -32,7 +32,7 @@ window.onload = function(){
         
     }
     
-    // rafraichit le canvas tout les "delay" de temps
+    // refresh the canvas every "delay" ms
     
     function refreshCanvas(){
         
@@ -57,7 +57,7 @@ window.onload = function(){
         
     }
     
-    // fonction qui permet d'ecrire du texte quand la partie est perdue
+    // funtion that allows to write some text when the game is lost
     
     function gameOver(){
         ctx.save();
@@ -77,7 +77,7 @@ window.onload = function(){
         ctx.restore();
     }
     
-    // fonction qui permet de relancer le jeu apres un game over
+    // function that allows to restart a game after a game over
     
     function restart(){
         snakee = new Snake([[6,4],[5,4],[4,4],[3,4],[2,4],[1,4]], "right");
@@ -87,7 +87,7 @@ window.onload = function(){
         refreshCanvas();  
     }
     
-    // fonction qui permet d'afficher le score
+    // function that allows to display the score
         
     function drawScore(){
         ctx.save();
@@ -101,7 +101,7 @@ window.onload = function(){
         ctx.restore();   
     }
     
-    // dessine les cubes appartenant au corps du serpent
+    // draw cubes belonging to the snake's body
     
     function drawBlock(ctx, position){
         var x = position[0]*blockSize;
@@ -109,14 +109,14 @@ window.onload = function(){
         ctx.fillRect(x,y, blockSize, blockSize);
     }
     
-    // constructeur du serpent
+    // snake builder
     
     function Snake(body, direction){
         this.body = body;
         this.direction = direction;
         this.ateApple = false;
         
-        // methode qui permet de dessiner le serpent
+        // method that allows to draw the snake
         
         this.draw = function(){
             ctx.save();
@@ -127,7 +127,7 @@ window.onload = function(){
             ctx.restore();
         };
         
-        // methode qui permet de faire avancer le serpent
+        // method that allows to make the snake going forward
         
         this.advance = function(){
             var nextPosition = this.body[0].slice();
@@ -156,7 +156,7 @@ window.onload = function(){
             }
         };
         
-        // methode qui permet de changer la direction du serpent tout en empechant les directions "impossibles"
+        // method that allows to change the direction of the snake while preventing "impossible" directions
         
         this.setDirection = function (newDirection){
             var allowedDirections;
@@ -178,7 +178,7 @@ window.onload = function(){
         };
         
         
-        // methode qui verifie si le serpent ne s'est pas pris un mur ou le reste de son corps
+        // method that checks whether the snake has not taken a wall or the rest of his body
         
         this.checkCollision = function(){
             var wallCollision = false;
@@ -206,7 +206,7 @@ window.onload = function(){
             return wallCollision || snakeCollision;    
         }
         
-        // methode qui permet au serpent de manger les pommes
+        // method that allows the snake to eat apples
         
         this.isEatingApple = function(appleToEat){
             var head = this.body[0];
@@ -218,12 +218,12 @@ window.onload = function(){
         }
     }
     
-    // constructeur de la pomme
+    // apple builder
     
     function Apple (position){
         this.position=position;
         
-        // methode qui permet de dessiner la pomme
+        // method that allows to draw the apple
         
         this.draw = function(){
             ctx.save();
@@ -237,7 +237,7 @@ window.onload = function(){
             ctx.restore();
         };
         
-        // methode qui permet de replacer la pomme une fois qu'elle a ete mangee
+        // method that allows to replace the apple once it has been eaten
         
         this.setNewPosition = function(){
             var newX = Math.round( Math.random()*(widthInBlocks - 1));
@@ -245,7 +245,7 @@ window.onload = function(){
             this.position = [newX, newY];
         };
         
-        // methode qui verifie si la pomme est sur le corps du serpent
+        // method that checks if the apple is on the snake's body
         
         this.isOnSnake = function(snakeToCheck){
             var isOnSnake = false;
@@ -265,7 +265,7 @@ window.onload = function(){
     
     
     
-    // fonction qui permet d'associer les nouvelles directions aux fleches du clavier
+    // function that allows to associate the new directions with the arrows of the keyboard
 
     document.onkeydown = function handleKeyDown(e){
         var key = e.keyCode;
