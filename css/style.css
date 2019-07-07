@@ -1,0 +1,174 @@
+/* GENERAL */
+
+body
+{
+    width:100vw;
+    font-family:'Lato', sans-serif !important;
+    padding:0px;
+    margin:0px;
+}
+
+/* HEADER */
+
+header
+{
+    width:100vw;
+    height:200px;
+    text-align: center;
+    background-image: linear-gradient(to bottom, #0B173B,#084B8A);
+    padding:0px;
+}
+
+.headerContainer
+{
+    width:720px;
+    height:100%;
+    margin: 0 auto;
+    padding:0px;
+}
+
+.headerTitle, .headerSubTitle{
+    color:#ffffff;
+    font-weight:bold;
+} 
+
+.headerTitle
+{
+    font-size: 50px;
+    margin: 0;
+    padding-top: 70px;
+}
+
+.headerSubTitle{
+    font-size: 26px;
+    margin: 0px;
+    padding: 30px 10px 0;
+    text-align:right;
+}
+
+/* XL */
+@media screen and (min-width:1201px) and (max-width:1500px)
+{
+    header
+    {
+        height:190px;
+    }
+
+    .headerContainer
+    {
+        width:690px;
+    } 
+
+    .headerTitle
+    {
+        font-size: 48px;
+        padding-top: 65px; 
+    }
+
+    .headerSubTitle{
+        font-size: 25px;
+        padding-top: 30px;
+    }
+}
+
+/* LG */
+@media screen and (min-width:992px) and (max-width:1200px)
+{
+    header
+    {
+        height:180px;
+    }
+
+    .headerContainer
+    {
+        width:665px;
+    } 
+
+    .headerTitle
+    {
+        font-size: 46px;
+        padding-top: 60px; 
+    }
+
+    .headerSubTitle{
+        font-size: 24px;
+        padding-top: 28px;
+    }
+}
+
+/* MD */
+@media screen and (min-width:768px) and (max-width:991px)
+{
+    header
+    {
+        height:165px;
+    }
+
+    .headerContainer
+    {
+        width:605px;
+    } 
+
+    .headerTitle
+    {
+        font-size: 42px;
+        padding-top: 55px; 
+    }
+
+    .headerSubTitle{
+        font-size: 22px;
+        padding-top: 25px;
+    }
+}
+
+/* SM */
+@media screen and (min-width:576px) and (max-width:767px)
+{
+    header
+    {
+        height:150px;
+    }
+
+    .headerContainer
+    {
+        width:555px;
+    } 
+
+    .headerTitle
+    {
+        font-size: 38px;
+        padding-top: 50px; 
+    }
+
+    .headerSubTitle{
+        font-size: 22px;
+        padding-top: 20px;
+        text-align:center;
+    }
+}
+
+/* XS */
+@media screen and (min-width:0px) and (max-width:575px)
+{
+    header
+    {
+        height:150px;
+    }
+    
+    .headerContainer
+    {
+        width:290px;
+    } 
+
+    .headerTitle
+    {
+        font-size:35px;
+        padding-top: 25px; 
+    }
+
+    .headerSubTitle{
+        font-size: 17px;
+        padding-top: 13px;
+        text-align:center;
+    }
+}
