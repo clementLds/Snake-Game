@@ -1,7 +1,7 @@
 window.onload = function(){   
-    var canvasWidth = 900;
-    var canvasHeight = 600;
-    var blockSize = 30;
+    var canvasWidth = 810;
+    var canvasHeight = 540;
+    var blockSize = 27;
     var ctx;
     var delay = 100;
     var snakee;
@@ -20,7 +20,7 @@ window.onload = function(){
         canvas.width = canvasWidth;
         canvas.height = canvasHeight;
         canvas.style.border = "30px solid gray";
-        canvas.style.margin = "50px auto";
+        canvas.style.margin="30px auto";
         canvas.style.display = "block";
         canvas.style.backgroundColor = "#ddd";
         document.body.appendChild(canvas);
@@ -261,8 +261,6 @@ window.onload = function(){
         }
         
     }
-    
-    
     
     
     // function that allows to associate the new directions with the arrows of the keyboard
